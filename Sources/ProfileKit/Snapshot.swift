@@ -106,6 +106,7 @@ public struct Repository: Codable, Sendable {
 
     public var name: String
     public var isFork: Bool
+    public var isPrivate: Bool
     public var stargazerCount: Int
     public var forkCount: Int
     /// Kilobytes, as reported by the API.
@@ -116,6 +117,7 @@ public struct Repository: Codable, Sendable {
     public init(
         name: String,
         isFork: Bool,
+        isPrivate: Bool,
         stargazerCount: Int,
         forkCount: Int,
         diskUsage: Int,
@@ -124,6 +126,7 @@ public struct Repository: Codable, Sendable {
     ) {
         self.name = name
         self.isFork = isFork
+        self.isPrivate = isPrivate
         self.stargazerCount = stargazerCount
         self.forkCount = forkCount
         self.diskUsage = diskUsage

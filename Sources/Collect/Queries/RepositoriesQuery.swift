@@ -10,6 +10,7 @@ public enum RepositoriesQuery {
               nodes {
                 name
                 isFork
+                isPrivate
                 stargazerCount
                 forkCount
                 diskUsage
@@ -47,6 +48,7 @@ public enum RepositoriesQuery {
     public struct Node: Decodable, Sendable {
         public var name: String
         public var isFork: Bool
+        public var isPrivate: Bool
         public var stargazerCount: Int
         public var forkCount: Int
         public var diskUsage: Int?

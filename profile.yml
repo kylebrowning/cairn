@@ -1,0 +1,9 @@
+theme: default
+columns: 2
+plugins:
+  - activity: { dense: true }
+  - community
+  - repositories: { top: 6 }
+  - streaks: { timezone: America/Los_Angeles }
+  - commits
+  - calendar: { style: isometric, span: 2 }

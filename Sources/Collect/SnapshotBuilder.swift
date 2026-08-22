@@ -98,6 +98,7 @@ public enum SnapshotBuilder {
                 Repository(
                     name: node.name,
                     isFork: node.isFork,
+                    isPrivate: node.isPrivate,
                     stargazerCount: node.stargazerCount,
                     forkCount: node.forkCount,
                     diskUsage: node.diskUsage ?? 0,

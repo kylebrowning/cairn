@@ -39,8 +39,10 @@ public struct RepositoriesPlugin: Plugin {
             in: snapshot,
             top: options.int("top", default: 6),
             ignore: options.strings("ignore"))
+        let publicStars = repos.filter { !$0.isPrivate }.reduce(0) { $0 + $1.stargazerCount }
         var blocks: [Block] = [
             .stat(Stat(icon: .repo, label: "Repositories", value: Format.thousands(repos.count))),
+            .stat(Stat(icon: .star, label: "Stars earned", value: Format.thousands(publicStars))),
             .stat(Stat(icon: .tag, label: "Releases", value: Format.thousands(repos.reduce(0) { $0 + $1.releases }))),
             .stat(Stat(icon: .package, label: "Packages", value: Format.thousands(snapshot.user.packages))),
             .stat(Stat(icon: .database, label: "Storage used", value: Format.storage(kilobytes: repos.reduce(0) { $0 + $1.diskUsage }))),
