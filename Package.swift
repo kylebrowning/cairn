@@ -39,7 +39,7 @@ let package = Package(
         ]),
         .testTarget(name: "ProfileKitTests", dependencies: ["ProfileKit"]),
         .testTarget(name: "CollectTests", dependencies: ["Collect"]),
-        .testTarget(name: "RenderTests", dependencies: ["Render", "Plugins"]),
+        .testTarget(name: "RenderTests", dependencies: ["Render", "Plugins"], exclude: ["Golden"]),
         .testTarget(name: "PluginTests", dependencies: ["Plugins"]),
     ]
 )

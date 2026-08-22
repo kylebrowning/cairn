@@ -41,6 +41,8 @@ public struct User: Codable, Sendable {
     public var websiteUrl: String?
     public var location: String?
     public var company: String?
+    /// The user's published package count.
+    public var packages: Int
 
     public init(
         name: String? = nil,
@@ -48,7 +50,8 @@ public struct User: Codable, Sendable {
         avatarUrl: String? = nil,
         websiteUrl: String? = nil,
         location: String? = nil,
-        company: String? = nil
+        company: String? = nil,
+        packages: Int = 0
     ) {
         self.name = name
         self.createdAt = createdAt
@@ -56,6 +59,7 @@ public struct User: Codable, Sendable {
         self.websiteUrl = websiteUrl
         self.location = location
         self.company = company
+        self.packages = packages
     }
 }
 
