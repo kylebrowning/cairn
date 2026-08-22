@@ -1,0 +1,52 @@
+name: Release
+
+on:
+  push:
+    tags: ["v*"]
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    name: Build static ${{ matrix.arch }}
+    runs-on: ubuntu-latest
+    container: swift:6.1
+    strategy:
+      matrix:
+        arch: [x86_64, aarch64]
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install static Linux SDK
+        run: |
+          swift sdk install \
+            https://download.swift.org/swift-6.1-release/static-sdk/swift-6.1-RELEASE/swift-6.1-RELEASE_static-linux-0.0.1.artifactbundle.tar.gz \
+            --checksum 111c6f7d280a651208b8c74c0521dd99365d785c1976a6e23162f55f65379ac6
+      - name: Build
+        run: swift build -c release --swift-sdk ${{ matrix.arch }}-swift-linux-musl
+      - name: Strip and stage
+        run: |
+          BIN=.build/${{ matrix.arch }}-swift-linux-musl/release/cairn
+          strip "$BIN" || true
+          mkdir -p dist
+          cp "$BIN" dist/cairn-linux-${{ matrix.arch }}
+      - uses: actions/upload-artifact@v4
+        with:
+          name: cairn-linux-${{ matrix.arch }}
+          path: dist/cairn-linux-${{ matrix.arch }}
+
+  release:
+    name: Attach to release
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          merge-multiple: true
+          path: dist
+      - name: Upload release assets
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create "${GITHUB_REF_NAME}" --repo "${GITHUB_REPOSITORY}" --generate-notes || true
+          gh release upload "${GITHUB_REF_NAME}" dist/* --repo "${GITHUB_REPOSITORY}" --clobber

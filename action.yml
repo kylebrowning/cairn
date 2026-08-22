@@ -1,0 +1,84 @@
+name: Cairn
+description: Render GitHub profile stat cards as SVGs and publish them to a branch.
+author: Kyle Browning
+branding:
+  icon: bar-chart-2
+  color: green
+
+inputs:
+  token:
+    description: GitHub token used for the API and for pushing the output branch.
+    default: ${{ github.token }}
+  config:
+    description: Path to the cairn config file.
+    default: .github/profile.yml
+  version:
+    description: Cairn release to run (a tag like v1.0.0, or "latest").
+    default: latest
+
+runs:
+  using: composite
+  steps:
+    - name: Check out configuration
+      uses: actions/checkout@v4
+
+    - name: Download cairn
+      shell: bash
+      env:
+        VERSION: ${{ inputs.version }}
+        ACTION_REPO: ${{ github.action_repository }}
+      run: |
+        set -euo pipefail
+        # github.action_repository is empty when the action runs from a local
+        # checkout; fall back to the canonical repository.
+        ACTION_REPO="${ACTION_REPO:-kylebrowning/cairn}"
+        case "$(uname -m)" in
+          x86_64) ARCH=x86_64 ;;
+          aarch64|arm64) ARCH=aarch64 ;;
+          *) echo "unsupported architecture $(uname -m)" >&2; exit 1 ;;
+        esac
+        if [ "$VERSION" = "latest" ]; then
+          URL="https://github.com/${ACTION_REPO}/releases/latest/download/cairn-linux-${ARCH}"
+        else
+          URL="https://github.com/${ACTION_REPO}/releases/download/${VERSION}/cairn-linux-${ARCH}"
+        fi
+        echo "downloading $URL"
+        curl -fsSL -o /usr/local/bin/cairn "$URL"
+        chmod +x /usr/local/bin/cairn
+
+    - name: Collect and render
+      shell: bash
+      env:
+        GITHUB_TOKEN: ${{ inputs.token }}
+        CONFIG: ${{ inputs.config }}
+      run: |
+        set -euo pipefail
+        cairn run \
+          --login "${GITHUB_REPOSITORY_OWNER}" \
+          --config "$CONFIG" \
+          --out ./cairn-out
+
+    - name: Publish to the output branch
+      shell: bash
+      env:
+        GITHUB_TOKEN: ${{ inputs.token }}
+        CONFIG: ${{ inputs.config }}
+      run: |
+        set -euo pipefail
+        BRANCH=$(grep -E '^\s*branch:' "$CONFIG" 2>/dev/null | head -1 | sed 's/.*branch:\s*//' | tr -d ' "' || true)
+        BRANCH="${BRANCH:-metrics}"
+        DIR=$(grep -E '^\s*dir:' "$CONFIG" 2>/dev/null | head -1 | sed 's/.*dir:\s*//' | tr -d ' "' || true)
+        DIR="${DIR:-.}"
+
+        WORK=$(mktemp -d)
+        mkdir -p "$WORK/$DIR"
+        cp -R ./cairn-out/. "$WORK/$DIR/"
+        cd "$WORK"
+        git init -q -b "$BRANCH"
+        git config user.name "cairn[bot]"
+        git config user.email "cairn-bot@users.noreply.github.com"
+        git add -A
+        git commit -q -m "Update profile cards"
+        git remote add origin "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+        # The branch stays at exactly one commit.
+        git push -f origin "$BRANCH"
