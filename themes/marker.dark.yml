@@ -1,0 +1,27 @@
+# Generated from design/tokens/marker.css — edit there, then re-run scripts/generate-themes.py
+font:
+  stack: "-apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif"
+  sizeBase: 12
+  sizeTitle: 14
+  sizeSmall: 11
+card:
+  bg: "#191512"
+  border: "#f2e9dc"
+  borderWidth: 2
+  radius: 14
+  padding: 20
+text:
+  primary: "#f6ede0"
+  muted: "#a3958a"
+  accent: "#ff7a4d"
+heatmap:
+  scale: ["#241f1a", "#66301b", "#a84a22", "#e8662f", "#ffa15e"]
+spark:
+  stroke: "#ff7a4d"
+  fill: "#ff7a4d26"
+bar:
+  track: "#241f1a"
+  fill: "#ff7a4d"
+badge:
+  bg: "#f2e9dc"
+  text: "#191512"

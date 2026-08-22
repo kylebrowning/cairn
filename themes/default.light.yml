@@ -1,0 +1,27 @@
+# Generated from design/tokens/default.css — edit there, then re-run scripts/generate-themes.py
+font:
+  stack: "-apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif"
+  sizeBase: 12
+  sizeTitle: 14
+  sizeSmall: 11
+card:
+  bg: "#ffffff"
+  border: "#d1d9e0"
+  borderWidth: 1
+  radius: 6
+  padding: 20
+text:
+  primary: "#1f2328"
+  muted: "#59636e"
+  accent: "#1a7f37"
+heatmap:
+  scale: ["#eff2f5", "#aceebb", "#4ac26b", "#2da44e", "#116329"]
+spark:
+  stroke: "#2da44e"
+  fill: "#2da44e29"
+bar:
+  track: "#eff2f5"
+  fill: "#2da44e"
+badge:
+  bg: "#eef1f4"
+  text: "#3f4954"

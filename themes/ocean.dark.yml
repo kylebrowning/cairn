@@ -1,0 +1,27 @@
+# Generated from design/tokens/ocean.css — edit there, then re-run scripts/generate-themes.py
+font:
+  stack: "-apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif"
+  sizeBase: 12
+  sizeTitle: 14
+  sizeSmall: 11
+card:
+  bg: "#0f1a22"
+  border: "#24384a"
+  borderWidth: 1
+  radius: 8
+  padding: 20
+text:
+  primary: "#dcebf5"
+  muted: "#87a3b8"
+  accent: "#3fa9e0"
+heatmap:
+  scale: ["#182835", "#0d3f5c", "#136a94", "#2b9cd0", "#6cd2ff"]
+spark:
+  stroke: "#3fa9e0"
+  fill: "#3fa9e026"
+bar:
+  track: "#182835"
+  fill: "#3fa9e0"
+badge:
+  bg: "#182835"
+  text: "#87a3b8"

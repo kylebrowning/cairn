@@ -1,0 +1,27 @@
+# Generated from design/tokens/paper.css — edit there, then re-run scripts/generate-themes.py
+font:
+  stack: "Georgia,serif"
+  sizeBase: 12
+  sizeTitle: 14
+  sizeSmall: 11
+card:
+  bg: "#f6f1e7"
+  border: "#ddd3bf"
+  borderWidth: 1
+  radius: 4
+  padding: 22
+text:
+  primary: "#26221a"
+  muted: "#756952"
+  accent: "#b0552a"
+heatmap:
+  scale: ["#ebe3d2", "#e5c9a1", "#d19a5d", "#b0552a", "#6e3216"]
+spark:
+  stroke: "#b0552a"
+  fill: "#b0552a24"
+bar:
+  track: "#ebe3d2"
+  fill: "#b0552a"
+badge:
+  bg: "#efe8d9"
+  text: "#6b5f47"

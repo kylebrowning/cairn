@@ -1,0 +1,27 @@
+# Generated from design/tokens/terminal.css — edit there, then re-run scripts/generate-themes.py
+font:
+  stack: "ui-monospace,\"SF Mono\",SFMono-Regular,Menlo,Consolas,\"Liberation Mono\",monospace"
+  sizeBase: 12
+  sizeTitle: 13
+  sizeSmall: 11
+card:
+  bg: "#0a0f0a"
+  border: "#1e3320"
+  borderWidth: 1
+  radius: 0
+  padding: 18
+text:
+  primary: "#93f5a3"
+  muted: "#4d8a58"
+  accent: "#35e65a"
+heatmap:
+  scale: ["#101810", "#14421e", "#1c6b2c", "#27a53f", "#49f568"]
+spark:
+  stroke: "#35e65a"
+  fill: "#35e65a26"
+bar:
+  track: "#101810"
+  fill: "#35e65a"
+badge:
+  bg: "#112413"
+  text: "#6fce7f"
