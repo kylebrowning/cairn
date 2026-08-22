@@ -163,6 +163,20 @@ enum MockupCards {
         }
     }
 
+    @Test(arguments: [
+        "default.light", "default.dark", "paper.light", "paper.dark",
+        "terminal.dark", "ocean.light", "ocean.dark", "marker.light", "marker.dark",
+    ])
+    func everyThemeVariantGolden(key: String) throws {
+        let parts = key.split(separator: ".")
+        let theme = try ThemeLoader.load(
+            name: String(parts[0]),
+            variant: ThemeLoader.Variant(rawValue: String(parts[1]))!)
+        try assertGolden(
+            "grid-\(key)",
+            GridRenderer.render(cards: MockupCards.all, theme: theme, columns: 2))
+    }
+
     @Test func markerThemeLayoutSurvivesBigRadiusAndBorder() throws {
         // Marker: 14px radius, 2px border — the layout-assumption canary.
         let marker = try ThemeLoader.load(name: "marker", variant: .light)
