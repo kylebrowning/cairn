@@ -48,16 +48,28 @@ public struct BigStat: Codable, Sendable {
 }
 
 public struct Heatmap: Codable, Sendable {
+    /// A month label above the week at `week` (0-based column index).
+    public struct MonthLabel: Codable, Sendable, Equatable {
+        public var week: Int
+        /// 0 = Jan.
+        public var month: Int
+
+        public init(week: Int, month: Int) {
+            self.week = week
+            self.month = month
+        }
+    }
+
     /// Weeks oldest-first; each week is up to 7 levels (0-4), Sunday first.
     public var weeks: [[Int]]
-    /// Month (0 = Jan) of the first week, for the month label band.
-    public var startMonth: Int
+    /// Labels for the 20px month band — one per first week of a month.
+    public var monthLabels: [MonthLabel]
     /// Show the Mon/Wed/Fri gutter (flat variant only).
     public var weekdayLabels: Bool
 
-    public init(weeks: [[Int]], startMonth: Int, weekdayLabels: Bool = true) {
+    public init(weeks: [[Int]], monthLabels: [MonthLabel] = [], weekdayLabels: Bool = true) {
         self.weeks = weeks
-        self.startMonth = startMonth
+        self.monthLabels = monthLabels
         self.weekdayLabels = weekdayLabels
     }
 }

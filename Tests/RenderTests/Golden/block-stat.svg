@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="44" viewBox="0 0 420 44">
+  <defs>
+    <symbol id="icon-commit" viewBox="0 0 16 16">
+      <path d="M11.93 8.5a4.002 4.002 0 0 1-7.86 0H.75a.75.75 0 0 1 0-1.5h3.32a4.002 4.002 0 0 1 7.86 0h3.32a.75.75 0 0 1 0 1.5Zm-1.43-.75a2.5 2.5 0 1 0-5 0 2.5 2.5 0 0 0 5 0Z"></path>
+    </symbol>
+  </defs>
+  <rect x="0" y="0" width="420" height="44" fill="#ffffff"/>
+  <g transform="translate(10 10)">
+    <use href="#icon-commit" x="0" y="4" width="16" height="16" fill="#59636e"/>
+    <text x="26" y="16.2" font-size="12" font-family="-apple-system,BlinkMacSystemFont,&quot;Segoe UI&quot;,Roboto,Helvetica,Arial,sans-serif" fill="#1f2328">Commits</text>
+    <text x="400" y="16.2" font-size="12" font-family="-apple-system,BlinkMacSystemFont,&quot;Segoe UI&quot;,Roboto,Helvetica,Arial,sans-serif" font-weight="600" fill="#1f2328" text-anchor="end">13,100</text>
+  </g>
+</svg>

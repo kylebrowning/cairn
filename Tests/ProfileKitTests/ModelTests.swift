@@ -64,8 +64,8 @@ import Testing
             blocks: [
                 .stat(Stat(icon: .commit, label: "Commits", value: "13,100", dense: true)),
                 .statGrid([BigStat(value: "23 days", label: "current streak", accent: true)]),
-                .heatmap(Heatmap(weeks: [[0, 1, 2, 3, 4, 0, 1]], startMonth: 8)),
-                .isometricHeatmap(Heatmap(weeks: [[4, 4, 4, 4, 4, 4, 4]], startMonth: 0, weekdayLabels: false)),
+                .heatmap(Heatmap(weeks: [[0, 1, 2, 3, 4, 0, 1]], monthLabels: [.init(week: 0, month: 8)])),
+                .isometricHeatmap(Heatmap(weeks: [[4, 4, 4, 4, 4, 4, 4]], weekdayLabels: false)),
                 .sparkline(Sparkline(values: [1, 2, 3], label: "26")),
                 .barList([Bar(label: "Swift", value: "34%", raw: 34, color: "#F05138")]),
                 .badgeRow([Badge(text: "swift")]),
