@@ -1,0 +1,18 @@
+/* Default theme — feels at home on GitHub without cloning it. Light = :root. */
+:root{
+--font-stack:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+--font-size-base:12px;--font-size-title:14px;--font-size-small:11px;
+--card-bg:#ffffff;--card-border:#d1d9e0;--card-border-width:1px;--card-radius:6px;--card-padding:20px;
+--text-primary:#1f2328;--text-muted:#59636e;--accent:#1a7f37;
+--heat-0:#eff2f5;--heat-1:#aceebb;--heat-2:#4ac26b;--heat-3:#2da44e;--heat-4:#116329;
+--spark-stroke:#2da44e;--spark-fill:#2da44e29;
+--bar-track:#eff2f5;--bar-fill:#2da44e;
+--badge-bg:#eef1f4;--badge-text:#3f4954;
+}
+[data-theme="default-dark"]{
+--card-bg:#151b23;--card-border:#2f3742;--text-primary:#e6edf3;--text-muted:#9198a1;--accent:#3fb950;
+--heat-0:#232b35;--heat-1:#113a24;--heat-2:#1a7f37;--heat-3:#2ea043;--heat-4:#56d364;
+--spark-stroke:#3fb950;--spark-fill:#3fb95029;
+--bar-track:#232b35;--bar-fill:#3fb950;
+--badge-bg:#232b35;--badge-text:#9198a1;
+}

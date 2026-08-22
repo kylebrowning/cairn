@@ -1,0 +1,21 @@
+/* Marker — the mood-shift proof: big radius, 2px ink border, hot coral scale, inverted badges. No block special-cases. */
+[data-theme="marker"]{
+--font-stack:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+--font-size-base:12px;--font-size-title:14px;--font-size-small:11px;
+--card-bg:#fffdf4;--card-border:#221d1a;--card-border-width:2px;--card-radius:14px;--card-padding:20px;
+--text-primary:#221d1a;--text-muted:#6f645c;--accent:#f4632e;
+--heat-0:#f1ece1;--heat-1:#ffd1a6;--heat-2:#ff9e5e;--heat-3:#f4632e;--heat-4:#a82c0c;
+--spark-stroke:#f4632e;--spark-fill:#f4632e26;
+--bar-track:#f1ece1;--bar-fill:#f4632e;
+--badge-bg:#221d1a;--badge-text:#fffdf4;
+}
+[data-theme="marker-dark"]{
+--font-stack:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+--font-size-base:12px;--font-size-title:14px;--font-size-small:11px;
+--card-bg:#191512;--card-border:#f2e9dc;--card-border-width:2px;--card-radius:14px;--card-padding:20px;
+--text-primary:#f6ede0;--text-muted:#a3958a;--accent:#ff7a4d;
+--heat-0:#241f1a;--heat-1:#66301b;--heat-2:#a84a22;--heat-3:#e8662f;--heat-4:#ffa15e;
+--spark-stroke:#ff7a4d;--spark-fill:#ff7a4d26;
+--bar-track:#241f1a;--bar-fill:#ff7a4d;
+--badge-bg:#f2e9dc;--badge-text:#191512;
+}

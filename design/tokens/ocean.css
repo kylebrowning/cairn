@@ -1,0 +1,21 @@
+/* Ocean — hue-only retheme: same geometry as Default, cool blue scale. */
+[data-theme="ocean"]{
+--font-stack:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+--font-size-base:12px;--font-size-title:14px;--font-size-small:11px;
+--card-bg:#ffffff;--card-border:#cfdce6;--card-border-width:1px;--card-radius:8px;--card-padding:20px;
+--text-primary:#16232e;--text-muted:#5b7183;--accent:#0e7bb8;
+--heat-0:#e9f0f5;--heat-1:#a5d8f0;--heat-2:#4fa8d8;--heat-3:#1379ae;--heat-4:#0a4a73;
+--spark-stroke:#1379ae;--spark-fill:#1379ae24;
+--bar-track:#e9f0f5;--bar-fill:#1379ae;
+--badge-bg:#e4eef5;--badge-text:#446a85;
+}
+[data-theme="ocean-dark"]{
+--font-stack:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+--font-size-base:12px;--font-size-title:14px;--font-size-small:11px;
+--card-bg:#0f1a22;--card-border:#24384a;--card-border-width:1px;--card-radius:8px;--card-padding:20px;
+--text-primary:#dcebf5;--text-muted:#87a3b8;--accent:#3fa9e0;
+--heat-0:#182835;--heat-1:#0d3f5c;--heat-2:#136a94;--heat-3:#2b9cd0;--heat-4:#6cd2ff;
+--spark-stroke:#3fa9e0;--spark-fill:#3fa9e026;
+--bar-track:#182835;--bar-fill:#3fa9e0;
+--badge-bg:#182835;--badge-text:#87a3b8;
+}

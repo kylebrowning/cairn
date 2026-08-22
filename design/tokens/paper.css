@@ -1,0 +1,21 @@
+/* Paper — warm off-white, ink text, one warm accent. Quiet and editorial. */
+[data-theme="paper"]{
+--font-stack:Georgia,serif;
+--font-size-base:12px;--font-size-title:14px;--font-size-small:11px;
+--card-bg:#f6f1e7;--card-border:#ddd3bf;--card-border-width:1px;--card-radius:4px;--card-padding:22px;
+--text-primary:#26221a;--text-muted:#756952;--accent:#b0552a;
+--heat-0:#ebe3d2;--heat-1:#e5c9a1;--heat-2:#d19a5d;--heat-3:#b0552a;--heat-4:#6e3216;
+--spark-stroke:#b0552a;--spark-fill:#b0552a24;
+--bar-track:#ebe3d2;--bar-fill:#b0552a;
+--badge-bg:#efe8d9;--badge-text:#6b5f47;
+}
+[data-theme="paper-dark"]{
+--font-stack:Georgia,serif;
+--font-size-base:12px;--font-size-title:14px;--font-size-small:11px;
+--card-bg:#201c14;--card-border:#3d3626;--card-border-width:1px;--card-radius:4px;--card-padding:22px;
+--text-primary:#ece4d2;--text-muted:#a4977c;--accent:#e08d52;
+--heat-0:#2a251b;--heat-1:#54401f;--heat-2:#8a5f2c;--heat-3:#c07a3e;--heat-4:#e8ae6c;
+--spark-stroke:#e08d52;--spark-fill:#e08d5226;
+--bar-track:#2a251b;--bar-fill:#e08d52;
+--badge-bg:#2e2920;--badge-text:#b3a68a;
+}

@@ -1,0 +1,11 @@
+/* Terminal — dark only. Monospace, phosphor green, hairline borders, square corners. */
+[data-theme="terminal"]{
+--font-stack:ui-monospace,"SF Mono",SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;
+--font-size-base:12px;--font-size-title:13px;--font-size-small:11px;
+--card-bg:#0a0f0a;--card-border:#1e3320;--card-border-width:1px;--card-radius:0px;--card-padding:18px;
+--text-primary:#93f5a3;--text-muted:#4d8a58;--accent:#35e65a;
+--heat-0:#101810;--heat-1:#14421e;--heat-2:#1c6b2c;--heat-3:#27a53f;--heat-4:#49f568;
+--spark-stroke:#35e65a;--spark-fill:#35e65a26;
+--bar-track:#101810;--bar-fill:#35e65a;
+--badge-bg:#112413;--badge-text:#6fce7f;
+}
