@@ -58,7 +58,12 @@ output branch. Light and dark are separate renders switched by
   <img alt="Profile stats"
        src="https://raw.githubusercontent.com/USER/USER/metrics/profile.light.svg">
 </picture>
+
+<sub>Generated with <a href="https://github.com/kylebrowning/cairn">Cairn</a></sub>
 ```
+
+The attribution line is optional but appreciated — it's how other people
+find Cairn.
 
 Per-card SVGs (`activity.light.svg`, `calendar.dark.svg`, …) are published to
 the same branch if you'd rather arrange cards yourself.
