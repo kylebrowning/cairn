@@ -13,7 +13,7 @@ inputs:
     description: Path to the cairn config file.
     default: .github/profile.yml
   version:
-    description: Cairn release to run (a tag like v1.0.0, or "latest").
+    description: Cairn release to run (a tag like 1.0.0, or "latest").
     default: latest
 
 runs:
