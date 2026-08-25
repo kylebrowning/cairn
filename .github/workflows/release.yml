@@ -11,7 +11,7 @@ jobs:
   build:
     name: Build static ${{ matrix.arch }}
     runs-on: ubuntu-latest
-    container: swift:6.2-jammy
+    container: swift:6.2.4-jammy
     strategy:
       matrix:
         arch: [x86_64, aarch64]
@@ -20,8 +20,8 @@ jobs:
       - name: Install static Linux SDK
         run: |
           swift sdk install \
-            https://download.swift.org/swift-6.2-release/static-sdk/swift-6.2-RELEASE/swift-6.2-RELEASE_static-linux-0.0.1.artifactbundle.tar.gz \
-            --checksum d2225840e592389ca517bbf71652f7003dbf45ac35d1e57d98b9250368769378
+            https://download.swift.org/swift-6.2.4-release/static-sdk/swift-6.2.4-RELEASE/swift-6.2.4-RELEASE_static-linux-0.0.1.artifactbundle.tar.gz \
+            --checksum adf14ce1f6338f66b55f7a6ef39a448fd0fb353d5262be4666e98140f4c9b4fd
       - name: Build
         run: swift build -c release --swift-sdk ${{ matrix.arch }}-swift-linux-musl
       - name: Strip and stage
