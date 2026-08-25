@@ -9,7 +9,7 @@ jobs:
   test-linux:
     name: Tests (Linux)
     runs-on: ubuntu-latest
-    container: swift:6.1
+    container: swift:6.2-jammy
     steps:
       - uses: actions/checkout@v4
       - name: Run tests
@@ -18,13 +18,13 @@ jobs:
   static-build:
     name: Static Linux build
     runs-on: ubuntu-latest
-    container: swift:6.1
+    container: swift:6.2-jammy
     steps:
       - uses: actions/checkout@v4
       - name: Install static Linux SDK
         run: |
           swift sdk install \
-            https://download.swift.org/swift-6.1-release/static-sdk/swift-6.1-RELEASE/swift-6.1-RELEASE_static-linux-0.0.1.artifactbundle.tar.gz \
-            --checksum 111c6f7d280a651208b8c74c0521dd99365d785c1976a6e23162f55f65379ac6
+            https://download.swift.org/swift-6.2-release/static-sdk/swift-6.2-RELEASE/swift-6.2-RELEASE_static-linux-0.0.1.artifactbundle.tar.gz \
+            --checksum d2225840e592389ca517bbf71652f7003dbf45ac35d1e57d98b9250368769378
       - name: Build static binary
         run: swift build -c release --swift-sdk x86_64-swift-linux-musl
