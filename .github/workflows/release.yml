@@ -20,8 +20,8 @@ jobs:
       - name: Install static Linux SDK
         run: |
           swift sdk install \
-            https://download.swift.org/swift-6.2.4-release/static-sdk/swift-6.2.4-RELEASE/swift-6.2.4-RELEASE_static-linux-0.0.1.artifactbundle.tar.gz \
-            --checksum adf14ce1f6338f66b55f7a6ef39a448fd0fb353d5262be4666e98140f4c9b4fd
+            https://download.swift.org/swift-6.2.4-release/static-sdk/swift-6.2.4-RELEASE/swift-6.2.4-RELEASE_static-linux-0.1.0.artifactbundle.tar.gz \
+            --checksum 24bdf84495dd31a6de2eb679647c1982b747bfbfe1a2060c779d84dcecd902a4
       - name: Build
         run: swift build -c release --swift-sdk ${{ matrix.arch }}-swift-linux-musl
       - name: Strip and stage
